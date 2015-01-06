@@ -7,11 +7,15 @@
   <description>JobSearchMaven</description>
   
   <dependencies>
+  
+  	<!-- TestNG dependency -->
   	<dependency>
   		<groupId>org.testng</groupId>
   		<artifactId>testng</artifactId>
   		<version>6.8.7</version>
   	</dependency>
+  	
+  	<!-- Selenium Firefox driver dependency -->
   	<dependency>
   		<groupId>org.seleniumhq.selenium</groupId>
   		<artifactId>selenium-firefox-driver</artifactId>
