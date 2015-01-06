@@ -2,9 +2,12 @@ package com.job.JobSearchMaven.tests;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 public class DiceSearchTest {
+	WebDriver driver;
 /*	
 	//DATA
 	String user;
@@ -16,6 +19,16 @@ public class DiceSearchTest {
 
 	@Parameters("user")
 */	
+	@BeforeClass
+	public void setUp() {
+		driver = new FirefoxDriver();
+	}
+	
+	@AfterClass
+	public void tearDown() {
+		driver.quit();
+	}
+	
 	@Test
 	public void testDiceSearch(/*String user*/) /*throws Exception*/ {
 /*
@@ -40,10 +53,10 @@ public class DiceSearchTest {
 		
 		System.out.println(ourBrowser +": Open and login Dice");
 */		
-		WebDriver driver = new FirefoxDriver();
+		
 		driver.get("http://www.dice.com/");
 		try{Thread.sleep(2000);}catch(Exception e){};
-		driver.quit();
+		
 /*
 		driver.findElement(By.xpath("//li[@class='logindd dropdown']/a")).click();
 		driver.findElement(By.id("Email_1")).clear();
