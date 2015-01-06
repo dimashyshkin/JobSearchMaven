@@ -5,4 +5,16 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>JobSearchMaven</name>
   <description>JobSearchMaven</description>
+  <dependencies>
+  	<dependency>
+  		<groupId>org.testng</groupId>
+  		<artifactId>testng</artifactId>
+  		<version>6.8.5</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>org.seleniumhq.selenium</groupId>
+  		<artifactId>selenium-firefox-driver</artifactId>
+  		<version>2.44.0</version>
+  	</dependency>
+  </dependencies>
 </project>
