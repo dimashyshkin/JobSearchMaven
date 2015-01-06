@@ -2,9 +2,7 @@ package com.job.JobSearchMaven.tests;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 public class DiceSearchTest {
 	WebDriver driver;
@@ -19,12 +17,12 @@ public class DiceSearchTest {
 
 	@Parameters("user")
 */	
-	@BeforeClass
+	@BeforeTest
 	public void setUp() {
 		driver = new FirefoxDriver();
 	}
 	
-	@AfterClass
+	@AfterTest
 	public void tearDown() {
 		driver.quit();
 	}
