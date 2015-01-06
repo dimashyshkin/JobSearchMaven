@@ -1,17 +1,9 @@
 package com.job.JobSearchMaven.tests;
 
-import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.testng.Assert;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-import org.testng.annotations.AfterClass;
 
-@SuppressWarnings("unused")
 public class DiceSearchTest {
 /*	
 	//DATA
@@ -25,7 +17,7 @@ public class DiceSearchTest {
 	@Parameters("user")
 */	
 	@Test
-	public void testDiceSearch(String user) throws Exception {
+	public void testDiceSearch(/*String user*/) /*throws Exception*/ {
 /*
 		if (user.equals("dima")) {
 			System.out.println(ourBrowser +": Search for Dima");
