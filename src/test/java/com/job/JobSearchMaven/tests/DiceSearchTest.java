@@ -1,7 +1,9 @@
 package com.job.JobSearchMaven.tests;
 
 import org.testng.annotations.*;
+
 import com.job.JobSearchMaven.core.BaseTest;
+import com.job.JobSearchMaven.core.web.pages.DiceDashboardPage;
 
 public class DiceSearchTest extends BaseTest{
 /*	
@@ -40,7 +42,9 @@ public class DiceSearchTest extends BaseTest{
 		System.out.println(ourBrowser +": Open and login Dice");
 */		
 		
-		driver.get("http://www.dice.com/");
+		new DiceDashboardPage(driver)
+			.loadAsAnonymousUser()
+			.loginAs("dimashyshkin@hotmail.com", "dima8439");
 		try{Thread.sleep(2000);}catch(Exception e){};
 		
 /*
