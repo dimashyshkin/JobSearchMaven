@@ -1,0 +1,21 @@
+environments:
+
+	local:
+		scheme: http
+		host: localhost
+		port:3000
+		
+	development:	
+		scheme: http
+		host: localhost
+		port:3000
+		
+	test:	
+		scheme: http
+		host: localhost
+		port:3000	
+	
+	production:	
+		scheme: http
+		host: localhost
+		port:3000

@@ -45,7 +45,7 @@ public class DiceSearchTest extends BaseTest{
 		new DiceDashboardPage(driver)
 			.loadAsAnonymousUser()
 			.loginAs("dimashyshkin@hotmail.com", "dima8439");
-		try{Thread.sleep(2000);}catch(Exception e){};
+		try{Thread.sleep(5000);}catch(Exception e){};
 		
 /*
 		driver.findElement(By.xpath("//li[@class='logindd dropdown']/a")).click();
