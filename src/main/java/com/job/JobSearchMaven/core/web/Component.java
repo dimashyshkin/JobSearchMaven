@@ -12,6 +12,7 @@ public abstract class Component<T extends Component<T>> {
 	
 	public abstract boolean isAvailable();
 	
+	@SuppressWarnings("unchecked")
 	public T waitUntilAvailable(){
 		return new Wait<T>().forComponent((T) this).toBeAvailable();
 	}
