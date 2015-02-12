@@ -16,4 +16,9 @@ public class TextInput extends WebComponent<TextInput>{
 		return this;
 	}
 	
+	public TextInput clearInputField(){
+		getWebElement().clear();
+		return this;
+	}
+	
 }

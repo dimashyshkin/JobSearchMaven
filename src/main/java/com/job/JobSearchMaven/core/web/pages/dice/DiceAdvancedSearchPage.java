@@ -29,6 +29,18 @@ public class DiceAdvancedSearchPage extends WebPage<DiceAdvancedSearchPage>{
 				getFindTechJobsButton().isAvailable();
 	}
 	
+	public DiceAdvancedSearchPage fillInForm(String keywords, String excludedKeywords, String location) {
+		getKeywordsInput().inputText(keywords);
+		getExcludedKeywordsInput().inputText(excludedKeywords);
+		getLocationInput().clearInputField().inputText(location);
+		return this;
+	}
+	
+	public DiceAdvancedSearchResultsPage submitSearch() {
+		getFindTechJobsButton().click();
+		return new DiceAdvancedSearchResultsPage(driver).waitUntilAvailable();
+	}
+	
 	private TextInput getKeywordsInput(){
 		return new TextInput(driver, By.xpath("//input[@id='for_one']"));
 	}
@@ -38,7 +50,7 @@ public class DiceAdvancedSearchPage extends WebPage<DiceAdvancedSearchPage>{
 	}
 	
 	private TextInput getLocationInput(){
-		return new TextInput(driver, By.xpath("//input[@id='for_none']"));
+		return new TextInput(driver, By.xpath("//input[@id='for_loc']"));
 	}
 	
 	private Button getFindTechJobsButton(){
