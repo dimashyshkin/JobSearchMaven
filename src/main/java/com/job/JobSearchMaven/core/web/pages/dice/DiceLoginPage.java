@@ -1,4 +1,4 @@
-package com.job.JobSearchMaven.core.web.pages;
+package com.job.JobSearchMaven.core.web.pages.dice;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -25,7 +25,7 @@ public class DiceLoginPage extends WebPage<DiceLoginPage>{
 	@Override
 	public boolean isAvailable() {
 		return getUsernameInput().isAvailable() &&
-				getPasswordInput().isAvailable()&&
+				getPasswordInput().isAvailable() &&
 				getLoginButton().isAvailable();
 	}
 

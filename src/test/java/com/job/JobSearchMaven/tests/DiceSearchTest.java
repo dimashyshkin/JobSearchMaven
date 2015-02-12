@@ -3,7 +3,7 @@ package com.job.JobSearchMaven.tests;
 import org.testng.annotations.*;
 
 import com.job.JobSearchMaven.core.BaseTest;
-import com.job.JobSearchMaven.core.web.pages.DiceDashboardPage;
+import com.job.JobSearchMaven.core.web.pages.dice.DiceDashboardPage;
 
 public class DiceSearchTest extends BaseTest{
 /*	
@@ -44,7 +44,8 @@ public class DiceSearchTest extends BaseTest{
 		
 		new DiceDashboardPage(driver)
 			.loadAsAnonymousUser()
-			.loginAs("dimashyshkin@hotmail.com", "dima8439");
+			.loginAs("dimashyshkin@hotmail.com", "dima8439")
+			.goToDiceAdvancedSearchPage();
 		try{Thread.sleep(5000);}catch(Exception e){};
 		
 /*

@@ -1,4 +1,4 @@
-package com.job.JobSearchMaven.core.web.pages;
+package com.job.JobSearchMaven.core.web.pages.dice;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -22,7 +22,7 @@ public class DiceDashboardPage extends WebPage<DiceDashboardPage>{
 
 	@Override
 	public boolean isAvailable() {
-		return getAdvancedJobSearch().isAvailable();
+		return getAdvancedJobSearchLink().isAvailable();
 	}
 	
 	public DiceLoginPage loadAsAnonymousUser(){
@@ -30,7 +30,12 @@ public class DiceDashboardPage extends WebPage<DiceDashboardPage>{
 		return new DiceLoginPage(driver).waitUntilAvailable();
 	}
 	
-	private Link getAdvancedJobSearch(){
+	public DiceAdvancedSearchPage goToDiceAdvancedSearchPage() {
+		getAdvancedJobSearchLink().click();
+		return new DiceAdvancedSearchPage(driver).waitUntilAvailable();
+	}
+	
+	private Link getAdvancedJobSearchLink(){
 		return new Link(driver, By.xpath("//a[@class='dice-btn-link']"));
 	}
 	
