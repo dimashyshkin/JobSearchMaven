@@ -1,5 +1,8 @@
 package com.job.JobSearchMaven.tests;
 
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.*;
+
 import org.testng.annotations.*;
 
 import com.job.JobSearchMaven.core.BaseTest;
@@ -7,109 +10,22 @@ import com.job.JobSearchMaven.core.web.pages.dice.DiceAdvancedSearchResultsPage;
 import com.job.JobSearchMaven.core.web.pages.dice.DiceDashboardPage;
 
 public class DiceSearchTest extends BaseTest{
-/*	
-	//DATA
-	String user;
-	private String login;
-	private String password;
-	private String keywords;
-	private String zipcode;
-	private String expectedTitle;
 
-	@Parameters("user")
-*/	
 	@Test
 	public void testDiceSearch(/*String user*/) /*throws Exception*/ {
-/*
-		if (user.equals("dima")) {
-			System.out.println(ourBrowser +": Search for Dima");
-			login = Data.dima_login;
-			password = Data.dima_password;
-			keywords = Data.dima_dice_keywords;
-			zipcode = Data.dima_zipcode;
-			expectedTitle = Data.dima_dice_expectedTitle;
-		}
-		
-		if (user.equals("olya")) {
-			System.out.println(ourBrowser +": Search for Olya");
-			login = Data.olya_login;
-			password = Data.olya_password;
-			keywords = Data.olya_dice_keywords;
-			zipcode = Data.olya_zipcode;
-			expectedTitle = Data.olya_dice_expectedTitle;
-		}
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		
-		System.out.println(ourBrowser +": Open and login Dice");
-*/		
+
 		
 		DiceAdvancedSearchResultsPage resultsPage = new DiceDashboardPage(driver)
 			.loadAsAnonymousUser()
 			.loginAs("dimashyshkin@hotmail.com", "dima8439")
 			.goToDiceAdvancedSearchPage()
 			.fillInForm(
-					"qa,sqa,test",
-					"manager",
+					"qa OR Sqa OR Test",
+					"manager OR lead",
 					"75093")
 			.submitSearch();
+		assertThat("JobsPage loaded with results", resultsPage.getJobsPageHeaderText(), containsString("jobs in " + "75093"));
 		try{Thread.sleep(50000);}catch(Exception e){};
-		
-/*
-		driver.findElement(By.xpath("//li[@class='logindd dropdown']/a")).click();
-		driver.findElement(By.id("Email_1")).clear();
-		driver.findElement(By.id("Email_1")).sendKeys(login);
-		driver.findElement(By.id("Password_1")).clear();
-		driver.findElement(By.id("Password_1")).sendKeys(password);
-		driver.findElement(By.id("LoginBtn_1")).click();
-
-		System.out.println(ourBrowser +": Submit search");
-		//driver.findElement(By.xpath("(//div[@id='title']/a)")).click();
-		driver.findElement(By.linkText("Advanced Job Search")).click();
-		driver.findElement(By.id("for_one")).clear();
-		driver.findElement(By.id("for_one")).sendKeys(keywords);
-		//new Select(driver.findElement(By.id("matchMode"))).selectByVisibleText("Boolean");
-		driver.findElement(By.id("searchJobTitleOnly1")).click();
-		driver.findElement(By.id("excludeValueList1")).clear();
-		driver.findElement(By.id("excludeValueList1")).sendKeys("manager");
-		new Select(driver.findElement(By.id("zipCodeCityRadius"))).selectByVisibleText("within 30 miles of");
-		driver.findElement(By.id("zipCodeCity")).clear();
-		driver.findElement(By.id("zipCodeCity")).sendKeys(zipcode);
-		new Select(driver.findElement(By.id("travelPct"))).selectByVisibleText("< 100%");
-		driver.findElement(By.id("show")).click();
-		new Select(driver.findElement(By.id("taxTermList"))).selectByVisibleText("Full-time");
-		
-		Select termList = new Select(driver.findElement(By.id("taxTermList")));
-		termList.selectByVisibleText("Full-time");
-		termList.selectByVisibleText("Contract - Corp-to-Corp");
-		termList.selectByVisibleText("Contract - Independent");
-		termList.selectByVisibleText("Contract - W2");
-		termList.selectByVisibleText("Contract to Hire - Corp-to-Corp");
-		termList.selectByVisibleText("Contract to Hire - Independent");
-		termList.selectByVisibleText("Contract to Hire - W2");
-		termList.selectByVisibleText("Part-time");
-		new Select(driver.findElement(By.id("daysBack"))).selectByVisibleText("2");
-		new Select(driver.findElement(By.id("numPerPage"))).selectByVisibleText("50");
-		driver.findElement(By.id("submit2-button")).click();
-		String title = driver.getTitle();
-		if (expectedTitle.equals(title)) {
-	    	System.out.println(ourBrowser +": Done");
-	    }
-		if (isElementPresent(By.xpath("//button[@id='SubmitAlert_1']"))) {
-			driver.findElement(By.xpath("//button[@class='close']")).click();
-		}
-	}
-	
-	private boolean isElementPresent(By by) {
-	// Changed implicitlyWait for this statement, because I dont need to wait for 60 seconds here. 
-	// If I use it for 'Wait for element NOT present', it will take just 1 second to throw exception, not 60
-		driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
-		try {
-			driver.findElement(by);
-			return true;
-		} 	catch (Exception e) {
-			return false;
-			}
 			
-*/			
 	}	
 }

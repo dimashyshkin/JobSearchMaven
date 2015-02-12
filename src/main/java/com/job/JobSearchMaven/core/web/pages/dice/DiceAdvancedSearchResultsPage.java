@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 
 import com.job.JobSearchMaven.core.web.WebPage;
 import com.job.JobSearchMaven.core.web.elements.Link;
+import com.job.JobSearchMaven.core.web.elements.Text;
 
 public class DiceAdvancedSearchResultsPage extends WebPage<DiceAdvancedSearchResultsPage>{
 	
@@ -22,12 +23,21 @@ public class DiceAdvancedSearchResultsPage extends WebPage<DiceAdvancedSearchRes
 
 	@Override
 	public boolean isAvailable() {
-		return 	getCreateJobAlertLink().isAvailable();
+		return 	getCreateJobAlertLink().isAvailable() &&
+				getJobsPageHeader().isAvailable();
+	}
+	
+	public String getJobsPageHeaderText() {
+		return getJobsPageHeader().getText();
 	}
 	
 	
 	private Link getCreateJobAlertLink(){
 		return new Link(driver, By.xpath("//a[@class='btn dice-btn-secondary job-alert pull-right']"));
+	}
+	
+	private Text getJobsPageHeader(){
+		return new Text(driver, By.xpath("//h1[@class='pull-left h1']"));
 	}
 	
 }
