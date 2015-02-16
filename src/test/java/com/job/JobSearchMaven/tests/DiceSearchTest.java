@@ -12,7 +12,7 @@ import com.job.JobSearchMaven.core.web.pages.dice.DiceDashboardPage;
 public class DiceSearchTest extends BaseTest{
 
 	@Test
-	public void testDiceSearch() {
+	public void doDiceSearchTest() {
 		DiceAdvancedSearchResultsPage resultsPage = new DiceDashboardPage(driver)
 			.loadAsAnonymousUser()
 			.loginAs("dimashyshkin@hotmail.com", "dima8439")
