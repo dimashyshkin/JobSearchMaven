@@ -12,9 +12,7 @@ import com.job.JobSearchMaven.core.web.pages.dice.DiceDashboardPage;
 public class DiceSearchTest extends BaseTest{
 
 	@Test
-	public void testDiceSearch(/*String user*/) /*throws Exception*/ {
-
-		
+	public void testDiceSearch() {
 		DiceAdvancedSearchResultsPage resultsPage = new DiceDashboardPage(driver)
 			.loadAsAnonymousUser()
 			.loginAs("dimashyshkin@hotmail.com", "dima8439")
