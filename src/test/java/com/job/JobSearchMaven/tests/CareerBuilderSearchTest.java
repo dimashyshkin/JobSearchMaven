@@ -21,6 +21,7 @@ public class CareerBuilderSearchTest extends BaseTest{
 			.loginAs(testData.get("Username"), testData.get("Password"))
 			.goToCareerBuilderHomePage()
 			.goToCareerBuilderAdvancedSearchPage()
+			.selectUseByValue("ANY")
 			.fillInForm(
 					testData.get("Keywords"),
 					testData.get("ExcludedKeywords"),

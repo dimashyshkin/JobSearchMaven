@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 
 import com.job.JobSearchMaven.core.web.WebPage;
 import com.job.JobSearchMaven.core.web.elements.Button;
+import com.job.JobSearchMaven.core.web.elements.Dropdown;
 import com.job.JobSearchMaven.core.web.elements.TextInput;
 
 public class CareerBuilderAdvancedSearchPage extends WebPage<CareerBuilderAdvancedSearchPage>{
@@ -28,7 +29,13 @@ public class CareerBuilderAdvancedSearchPage extends WebPage<CareerBuilderAdvanc
 				getLocation1Input().isAvailable() &&
 				getLocation2Input().isAvailable() &&
 				getLocation3Input().isAvailable() &&
-				getFindJobsButton().isAvailable();
+				getFindJobsButton().isAvailable() &&
+				getUseDropdown().isAvailable();
+	}
+	
+	public CareerBuilderAdvancedSearchPage selectUseByValue(String value) {
+			getUseDropdown().selectByValue(value);
+		return new CareerBuilderAdvancedSearchPage(driver).waitUntilAvailable();
 	}
 	
 	public CareerBuilderAdvancedSearchPage fillInForm(String keywords, String excludedKeywords, String location1, String location2, String location3) {
@@ -67,6 +74,10 @@ public class CareerBuilderAdvancedSearchPage extends WebPage<CareerBuilderAdvanc
 	
 	private Button getFindJobsButton(){
 		return new Button(driver, By.xpath("//input[@id='SearchBtn']"));
+	}
+	
+	private Dropdown getUseDropdown(){
+		return new Dropdown(driver, By.xpath("//select[@id='advancedSearch_s_use']"));
 	}
 	
 }
