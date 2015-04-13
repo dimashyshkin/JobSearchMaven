@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite" parallel="none" Thread-count="0">
+
+    <test name="Run CareerBuilder Searche">
+        <classes>
+            <class name="com.job.JobSearchMaven.tests.CareerBuilderSearchTest" />
+      </classes>
+    </test>
+    
+    <test name="Run CareerBuilder Searche">
+        <classes>
+            <class name="com.job.JobSearchMaven.tests.DiceSearchTest" />
+      </classes>
+    </test>
+    
+    <test name="Run CareerBuilder Searche">
+        <classes>
+            <class name="com.job.JobSearchMaven.tests.LinkedInSearchTest" />
+      </classes>
+    </test>
+    
+</suite>

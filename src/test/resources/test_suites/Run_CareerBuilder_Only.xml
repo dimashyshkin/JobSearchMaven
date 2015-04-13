@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Job Search Suite" >
+
+    <test name="Run CareerBuilder Search">
+        <classes>
+            <class name="com.job.JobSearchMaven.tests.CareerBuilderSearchTest" />
+      </classes>
+    </test>
+    
+</suite>
