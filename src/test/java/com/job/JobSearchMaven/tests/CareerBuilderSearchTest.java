@@ -19,7 +19,7 @@ public class CareerBuilderSearchTest extends BaseTest{
 		CareerBuilderJobResultsPage resultsPage = new CareerBuilderMyCareerBuilderPage(driver)
 			.loadAsAnonymousUser()
 			.loginAs(testData.get("Username"), testData.get("Password"))
-			.goToCareerBuilderHomePage()
+			.goToCareerBuilderJobSearchPage()
 			.goToCareerBuilderAdvancedSearchPage()
 			.selectUseByValue("ANY")
 			.fillInForm(
@@ -29,8 +29,6 @@ public class CareerBuilderSearchTest extends BaseTest{
 					testData.get("Location2"),
 					testData.get("Location3"))
 			.submitSearch();
-		assertThat("JobsPage loaded with results", resultsPage.getJobsPageHeaderText(), containsString(testData.get("Keywords") + " Jobs in " + testData.get("Location")));
-		//try{Thread.sleep(50000);}catch(Exception e){};
-			
+		assertThat("JobsPage loaded with results", resultsPage.getJobsPageHeaderText(), containsString(testData.get("Keywords") + " Jobs in "));
 	}	
 }
