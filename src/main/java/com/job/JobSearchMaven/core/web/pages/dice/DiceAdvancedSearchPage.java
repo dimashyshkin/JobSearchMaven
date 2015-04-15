@@ -9,7 +9,8 @@ import com.job.JobSearchMaven.core.web.elements.TextInput;
 
 public class DiceAdvancedSearchPage extends WebPage<DiceAdvancedSearchPage>{
 	
-	private static final String PAGE_URL = BASE_URL + "/jobs/advancedSearch.html";
+	//private static final String PAGE_URL = BASE_URL + "/jobs/advancedSearch.html";
+	private static final String PAGE_URL = "http://dice.com/jobs/advancedSearch.html";
 
 	public DiceAdvancedSearchPage(WebDriver driver) {
 		super(driver);

@@ -8,7 +8,8 @@ import com.job.JobSearchMaven.core.web.elements.Link;
 
 public class DiceDashboardPage extends WebPage<DiceDashboardPage>{
 	
-	private static final String PAGE_URL = BASE_URL + "/dashboard";
+	//private static final String PAGE_URL = BASE_URL + "/dashboard";
+	private static final String PAGE_URL = "http://dice.com/dashboard";
 
 	public DiceDashboardPage(WebDriver driver) {
 		super(driver);

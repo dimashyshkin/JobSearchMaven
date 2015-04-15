@@ -9,7 +9,8 @@ import com.job.JobSearchMaven.core.web.elements.TextInput;
 
 public class DiceLoginPage extends WebPage<DiceLoginPage>{
 	
-	private static final String PAGE_URL = BASE_URL + "/dashboard/login";
+	//private static final String PAGE_URL = BASE_URL + "/dashboard/login";
+	private static final String PAGE_URL = "http://dice.com/dashboard/login";
 
 	public DiceLoginPage(WebDriver driver) {
 		super(driver);
