@@ -16,6 +16,7 @@ public class CareerBuilderSearchTest extends BaseTest{
 
 	@Test(dataProvider = "CsvDataProvider", dataProviderClass = CsvDataProvider.class)
 	public void doCareerBuilderSearchTest(Map<String, String> testData) {
+		System.out.println("CareerBuilder search started");
 		CareerBuilderJobResultsPage resultsPage = new CareerBuilderMyCareerBuilderPage(driver)
 			.loadAsAnonymousUser()
 			.loginAs(testData.get("Username"), testData.get("Password"))
@@ -29,6 +30,7 @@ public class CareerBuilderSearchTest extends BaseTest{
 					testData.get("Location2"),
 					testData.get("Location3"))
 			.submitSearch();
-		assertThat("JobsPage loaded with results", resultsPage.getJobsPageHeaderText(), containsString(testData.get("Keywords") + " Jobs in "));
+		assertThat("JobsPage loaded with results", resultsPage.getJobsPageHeaderText().toLowerCase(), containsString(testData.get("Keywords").toLowerCase() + " jobs in "));
+		System.out.println("CareerBuilder search finished");
 	}	
 }

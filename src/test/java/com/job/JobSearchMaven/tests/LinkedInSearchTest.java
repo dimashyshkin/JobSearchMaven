@@ -16,6 +16,7 @@ public class LinkedInSearchTest extends BaseTest{
 
 	@Test(dataProvider = "CsvDataProvider", dataProviderClass = CsvDataProvider.class)
 	public void doLinkedInSearchTest(Map<String, String> testData) {
+		System.out.println("LinkedIn search started");
 		LinkedInJobResultsPage resultsPage = new LinkedInHomePage(driver)
 			.loadAsAnonymousUser()
 			.loginAs(testData.get("Username"), testData.get("Password"))
@@ -25,8 +26,8 @@ public class LinkedInSearchTest extends BaseTest{
 					testData.get("Keywords"),
 					testData.get("Zipcode"))
 			.submitSearch();
-		assertThat("JobsPage loaded with results", resultsPage.getJobsPageHeaderText(), containsString("jobs in " + testData.get("Location")));
+		assertThat("JobsPage loaded with results", resultsPage.getJobsPageHeaderText(), containsString("results for"));
 		//try{Thread.sleep(50000);}catch(Exception e){};
-			
+		System.out.println("LinkedIn search finished");	
 	}	
 }
