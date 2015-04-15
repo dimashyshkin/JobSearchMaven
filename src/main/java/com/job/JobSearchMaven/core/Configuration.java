@@ -21,6 +21,7 @@ public class Configuration {
 	}
 	
 	public static void setGlobalEnvironment(String environmentKey) {
+		//GLOBAL_ENVIRONMENT = ALL_ENVIRONMENTS.environments.get(environmentKey);
 		GLOBAL_ENVIRONMENT = ALL_ENVIRONMENTS.environments.get(environmentKey);
 	}
 	
