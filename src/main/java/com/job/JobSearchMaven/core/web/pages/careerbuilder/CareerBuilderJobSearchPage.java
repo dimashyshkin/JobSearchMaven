@@ -6,16 +6,16 @@ import org.openqa.selenium.WebDriver;
 import com.job.JobSearchMaven.core.web.WebPage;
 import com.job.JobSearchMaven.core.web.elements.Link;
 
-public class CareerBuilderHomePage extends WebPage<CareerBuilderHomePage>{
+public class CareerBuilderJobSearchPage extends WebPage<CareerBuilderJobSearchPage>{
 	
-	private static final String PAGE_URL = "http://www.careerbuilder.com/?sc_cmp2=JS_Nav_Home";
+	private static final String PAGE_URL = "http://www.careerbuilder.com/browse/?sc_cmp2=JS_Nav_FindJobs";
 
-	public CareerBuilderHomePage(WebDriver driver) {
+	public CareerBuilderJobSearchPage(WebDriver driver) {
 		super(driver);
 	}
 	
 	@Override
-	public CareerBuilderHomePage load() {
+	public CareerBuilderJobSearchPage load() {
 		driver.get(PAGE_URL);
 		return this;
 	}
@@ -31,7 +31,7 @@ public class CareerBuilderHomePage extends WebPage<CareerBuilderHomePage>{
 	}
 	
 	private Link getAdvancedSearchLink(){
-		return new Link(driver, By.xpath("//a[contains(@href,'js_home_advsearch')]"));
+		return new Link(driver, By.xpath("//a[@id='AdvancedSearch']"));
 	}
 	
 }

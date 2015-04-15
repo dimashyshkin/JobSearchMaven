@@ -22,7 +22,7 @@ public class CareerBuilderMyCareerBuilderPage extends WebPage<CareerBuilderMyCar
 
 	@Override
 	public boolean isAvailable() {
-		return getHomeLink().isAvailable();
+		return getJobSearchLink().isAvailable();
 	}
 	
 	public CareerBuilderLoginPage loadAsAnonymousUser(){
@@ -30,13 +30,13 @@ public class CareerBuilderMyCareerBuilderPage extends WebPage<CareerBuilderMyCar
 		return new CareerBuilderLoginPage(driver).waitUntilAvailable();
 	}
 	
-	public CareerBuilderHomePage goToCareerBuilderHomePage() {
-		getHomeLink().click();
-		return new CareerBuilderHomePage(driver).waitUntilAvailable();
+	public CareerBuilderJobSearchPage goToCareerBuilderJobSearchPage() {
+		getJobSearchLink().click();
+		return new CareerBuilderJobSearchPage(driver).waitUntilAvailable();
 	}
 	
-	private Link getHomeLink(){
-		return new Link(driver, By.xpath("//a[contains(@href,'JS_Nav_Home')]"));
+	private Link getJobSearchLink(){
+		return new Link(driver, By.xpath("//a[@title='Find Jobs']"));
 	}
 	
 }
