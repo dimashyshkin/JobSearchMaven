@@ -17,7 +17,7 @@ public class DriverMaster {
 		String classpath = DriverMaster.class.getProtectionDomain().getCodeSource().getLocation().getPath();
 		classpath = classpath.replaceAll("/target/classes/", "");
 		classpath = classpath.substring(1);
-		System.out.println(classpath);
+		//System.out.println(classpath);
 		
 		switch (browser) {
 			case FIREFOX:
