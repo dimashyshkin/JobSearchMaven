@@ -14,7 +14,6 @@ public class DiceLoginPage extends WebPage<DiceLoginPage>{
 
 	public DiceLoginPage(WebDriver driver) {
 		super(driver);
-		// TODO Auto-generated constructor stub
 	}
 	
 	@Override

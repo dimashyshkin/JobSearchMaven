@@ -13,7 +13,6 @@ public class CareerBuilderLoginPage extends WebPage<CareerBuilderLoginPage>{
 
 	public CareerBuilderLoginPage(WebDriver driver) {
 		super(driver);
-		// TODO Auto-generated constructor stub
 	}
 	
 	@Override
