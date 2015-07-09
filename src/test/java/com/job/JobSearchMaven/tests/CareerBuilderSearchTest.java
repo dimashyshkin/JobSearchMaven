@@ -16,7 +16,7 @@ public class CareerBuilderSearchTest extends BaseTest{
 
 	@Test(dataProvider = "CsvDataProvider", dataProviderClass = CsvDataProvider.class)
 	public void doCareerBuilderSearchTest(Map<String, String> testData) {
-		System.out.println("CareerBuilder search started");
+		System.out.println("CareerBuilder search started. Driver " + driver.hashCode());
 		CareerBuilderJobResultsPage resultsPage = new CareerBuilderMyCareerBuilderPage(driver)
 			.loadAsAnonymousUser()
 			.loginAs(testData.get("Username"), testData.get("Password"))
