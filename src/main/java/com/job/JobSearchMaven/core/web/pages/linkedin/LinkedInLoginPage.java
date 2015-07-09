@@ -35,15 +35,15 @@ public class LinkedInLoginPage extends WebPage<LinkedInLoginPage>{
 	}
 	
 	private TextInput getEmailInput(){
-		return new TextInput(driver, By.xpath("//input[@id='session_key-login']"));
+		return new TextInput(driver, By.xpath("//input[@id='login-email']"));
 	}
 	
 	private TextInput getPasswordInput(){
-		return new TextInput(driver, By.xpath("//input[@id='session_password-login']"));
+		return new TextInput(driver, By.xpath("//input[@id='login-password']"));
 	}
 	
 	private Button getSignInButton(){
-		return new Button(driver, By.xpath("//input[@id='signin']"));
+		return new Button(driver, By.xpath("//input[@name='submit']"));
 	}
 	
 
