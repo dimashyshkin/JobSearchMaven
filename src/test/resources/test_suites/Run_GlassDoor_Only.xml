@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Job Search Suite" >
+
+    <test name="Run GlassDoor In Search">
+    	<parameter name="browser" value="firefox"></parameter>
+        <classes>
+            <class name="com.job.JobSearchMaven.tests.GlassDoorSearchTest" />
+      </classes>
+    </test>
+    
+</suite>
