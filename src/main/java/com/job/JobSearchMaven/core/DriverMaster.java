@@ -21,6 +21,7 @@ public class DriverMaster {
 		
 		switch (browser) {
 			case FIREFOX:
+				System.setProperty("webdriver.gecko.driver",classpath + "/src/main/resources/geckodriver.exe");
 				driver = new FirefoxDriver();
 				break;
 			case CHROME:
@@ -32,6 +33,7 @@ public class DriverMaster {
 				driver = new InternetExplorerDriver();
 				break;
 			default:
+				System.setProperty("webdriver.gecko.driver",classpath + "/src/main/resources/geckodriver.exe");
 				driver = new FirefoxDriver();
 				break;
 		}
