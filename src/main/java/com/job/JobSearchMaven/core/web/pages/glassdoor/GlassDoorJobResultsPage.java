@@ -34,7 +34,6 @@ public class GlassDoorJobResultsPage extends WebPage<GlassDoorJobResultsPage>{
 
 	@Override
 	public GlassDoorJobResultsPage load() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 	
