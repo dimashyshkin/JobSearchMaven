@@ -3,7 +3,7 @@
 <suite name="Job Search Suite" >
 
     <test name="Run GlassDoor In Search">
-    	<parameter name="browser" value="firefox"></parameter>
+    	<parameter name="browser" value="ie"></parameter>
         <classes>
             <class name="com.job.JobSearchMaven.tests.GlassDoorSearchTest" />
       </classes>
