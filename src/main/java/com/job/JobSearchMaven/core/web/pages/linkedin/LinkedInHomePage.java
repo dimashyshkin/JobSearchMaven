@@ -35,7 +35,16 @@ public class LinkedInHomePage extends WebPage<LinkedInHomePage> {
 		return new LinkedInJobsPage(driver).waitUntilAvailable();
 	}
 	
+	public LinkedInHomePage waitUntilLoggedIn() {
+		getMyNetworkLink().waitUntilAvailable();
+		return this;
+	}
+	
 	private Link getJobsLink(){
 		return new Link(driver, By.xpath("//a[contains(text(),'Jobs')]"));
+	}
+	
+	private Link getMyNetworkLink(){
+		return new Link(driver, By.xpath("//span[@id='nav-link-network']"));
 	}
 }

@@ -25,7 +25,7 @@ public class LinkedInJobsPage extends WebPage<LinkedInJobsPage>{
 	public boolean isAvailable() {
 		return 	getSearchBoxInput().isAvailable() &&
 				getSearchButton().isAvailable() &&
-				getAdvancedSearchButton().isAvailable();
+				getSearchButton().isAvailable();
 	}
 	
 	public LinkedInJobsPage openAdvancedSearch() {
@@ -45,15 +45,15 @@ public class LinkedInJobsPage extends WebPage<LinkedInJobsPage>{
 	}
 	
 	private TextInput getSearchBoxInput(){
-		return new TextInput(driver, By.xpath("//input[@id='field-keyword-name']"));
+		return new TextInput(driver, By.xpath("//input[@id='keyword-search-box']"));
 	}
 
 	private TextInput getZipCodeInput(){
-		return new TextInput(driver, By.xpath("//input[@id='field-location-name']"));
+		return new TextInput(driver, By.xpath("//input[@id='location-search-box']"));
 	}
 
 	private Button getSearchButton(){
-		return new Button(driver, By.xpath("//input[@class='search-button']"));
+		return new Button(driver, By.xpath("//button[contains(text(),'Find jobs')]"));
 	}
 	
 	private Button getAdvancedSearchButton(){

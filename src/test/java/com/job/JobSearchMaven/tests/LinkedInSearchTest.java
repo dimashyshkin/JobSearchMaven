@@ -21,12 +21,12 @@ public class LinkedInSearchTest extends BaseTest{
 			.loadAsAnonymousUser()
 			.loginAs(testData.get("Username"), testData.get("Password"))
 			.goToLinkedInJobsPage()
-			.openAdvancedSearch()
+			//.openAdvancedSearch()
 			.fillInForm(
 					testData.get("Keywords"),
 					testData.get("Zipcode"))
 			.submitSearch();
-		assertThat("JobsPage loaded with results", resultsPage.getJobsPageHeaderText(), containsString("results for"));
+		assertThat("JobsPage loaded with results", resultsPage.getJobsPageHeaderText(), containsString(" jobs in "));
 		//try{Thread.sleep(50000);}catch(Exception e){};
 		System.out.println("LinkedIn search finished");	
 	}	
