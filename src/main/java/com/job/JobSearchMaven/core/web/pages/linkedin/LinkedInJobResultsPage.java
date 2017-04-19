@@ -30,7 +30,7 @@ public class LinkedInJobResultsPage extends WebPage<LinkedInJobResultsPage>{
 	}
 	
 	private Text getJobsPageHeader(){
-		return new Text(driver, By.xpath("//div[@class='jserp-results-header']"));
+		return new Text(driver, By.xpath("//header[@class='job-search-context-header']"));
 	}
 	
 }

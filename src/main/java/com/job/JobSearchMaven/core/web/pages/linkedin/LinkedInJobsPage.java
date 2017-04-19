@@ -45,15 +45,15 @@ public class LinkedInJobsPage extends WebPage<LinkedInJobsPage>{
 	}
 	
 	private TextInput getSearchBoxInput(){
-		return new TextInput(driver, By.xpath("//input[@id='keyword-search-box']"));
+		return new TextInput(driver, By.xpath("//div[@class='keyword-search-form']//input"));
 	}
 
 	private TextInput getZipCodeInput(){
-		return new TextInput(driver, By.xpath("//input[@id='location-search-box']"));
+		return new TextInput(driver, By.xpath("//div[@class='location-search-form location-search-box ']//input"));
 	}
 
 	private Button getSearchButton(){
-		return new Button(driver, By.xpath("//button[contains(text(),'Find jobs')]"));
+		return new Button(driver, By.xpath("//button[@class='submit-button button-primary-large']"));
 	}
 	
 	private Button getAdvancedSearchButton(){

@@ -41,10 +41,10 @@ public class LinkedInHomePage extends WebPage<LinkedInHomePage> {
 	}
 	
 	private Link getJobsLink(){
-		return new Link(driver, By.xpath("//a[contains(text(),'Jobs')]"));
+		return new Link(driver, By.xpath("//a[@data-link-to='jobs']"));
 	}
 	
 	private Link getMyNetworkLink(){
-		return new Link(driver, By.xpath("//span[@id='nav-link-network']"));
+		return new Link(driver, By.xpath("//a[@data-link-to='mynetwork']"));
 	}
 }

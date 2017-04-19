@@ -26,7 +26,7 @@ public class LinkedInSearchTest extends BaseTest{
 					testData.get("Keywords"),
 					testData.get("Zipcode"))
 			.submitSearch();
-		assertThat("JobsPage loaded with results", resultsPage.getJobsPageHeaderText(), containsString(" jobs in "));
+		assertThat("JobsPage loaded with results", resultsPage.getJobsPageHeaderText(), containsString("Showing "));
 		//try{Thread.sleep(50000);}catch(Exception e){};
 		System.out.println("LinkedIn search finished");	
 	}	
